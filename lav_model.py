@@ -2,7 +2,7 @@
 # PYTHON-SCRIPT TIL AT TRÆNE OG TESTE EN NN-MODEL PÅ RELEVANT TEKSTMATERIALE.
 # UDARBEJDET AF NICOLAI VAN HOOIDONK IFM. SRP 2021.
 #
-# FORUDSÆTTER FILERNE: 1) Manifest.csv og 2) glove.6B.100d.txt
+# FORUDSÆTTER FILERNE: 1) manifest.csv og 2) glove.6B.100d.txt
 #
 import pandas as pd
 import numpy as np
@@ -25,7 +25,7 @@ from keras.preprocessing.text import Tokenizer
 import tensorflowjs as tfjs
 from keras.layers.recurrent import LSTM
 
-data = pd.read_csv("Manifest.csv")
+data = pd.read_csv("manifest.csv")
 
 
 def preprocess_text(sen):
@@ -45,7 +45,7 @@ def remove_tags(text):
 
 
 X = []
-sentences = list(data['utterance'])
+sentences = list(data['review'])
 for sen in sentences:
     X.append(preprocess_text(sen))
 
